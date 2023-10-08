@@ -1,0 +1,168 @@
+/*start-style:: global*/
+
+/*start-style:: section carousel*/
+.carousel {
+  &-img {
+    //   height: 100vh;
+  }
+  &-text {
+    @include rwd-mf(xl) {
+      overflow: hidden;
+    }
+  }
+  &-content {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 10%;
+    @include rwd-df(sm) {
+      padding: 0;
+    }
+  }
+  &__head5 {
+    font-size: 25px;
+    color: $color-secondary;
+    @include rwd-df(sm) {
+      font-size: 16px;
+    }
+    @include rwd-df(xs) {
+      font-size: 8px;
+    }
+  }
+  &__head3 {
+    font-size: 50px;
+    @include rwd-df(sm) {
+      font-size: 30px;
+    }
+    @include rwd-df(xs) {
+      font-size: 12px;
+    }
+  }
+  &__head2 {
+    font-size: 60px;
+    @include rwd-df(sm) {
+      font-size: 35px;
+    }
+    @include rwd-df(xs) {
+      font-size: 18px;
+    }
+  }
+  &__btn {
+    font-size: 18px;
+    @include rwd-df(xs) {
+      font-size: 10px;
+    }
+  }
+}
+
+/*end-style:: section carousel*/
+
+/*start-style:: section statics*/
+.statics {
+  background-color: var(--top-nav-bgColor) !important;
+  // border-bottom: 1px solid $color-secondary;
+  &__icon {
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    @include rwd-df(xs) {
+      width: 40px;
+      height: 40px;
+    }
+
+    i {
+      font-size: 3.2rem;
+      color: $color-white;
+      @include rwd-df(xs) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-secondary);
+    @include rwd-df(xs) {
+      font-size: 2rem;
+    }
+  }
+  &__scondary-head {
+    font-size: 1.5rem;
+    color: var(--text-secondary-color);
+  }
+}
+/*end-style:: section statics*/
+
+/*start-style:: section bestsellers*/
+.bestsellers {
+  .card {
+    margin: auto;
+    width: 180px !important;
+    @include rwd-mf(sm) {
+      width: 230px !important;
+    }
+    @include rwd-mf(lg) {
+      width: 270px !important;
+    }
+  }
+}
+
+/*end-style:: section bestsellers*/
+
+/*start-style:: section reading*/
+.reading {
+  background: var(--background-gradient);
+  &__header {
+  }
+  &__text-header {
+  }
+  &__text {
+    font-size: 1.4rem !important;
+    color: var(--text-secondary-color);
+  }
+  &__right {
+    iframe {
+      width: 100%;
+      min-height: 300px;
+      @include rwd-df(xs) {
+        min-height: 200px;
+      }
+    }
+  }
+}
+
+/*end-style:: section reading*/
+
+.new {
+  background: var(--background-gradient);
+}
+/*start-style:: section fqa*/
+.review {
+  background: var(--background-gradient);
+  figcaption {
+    width: 70%;
+    margin: auto;
+  }
+  img {
+    width: 130px;
+    margin: 20px 0;
+  }
+  &__name {
+    color: var(--about-head-text);
+  }
+  &__text {
+    color: var(--text-secondary);
+    margin: 15px 0px;
+  }
+  &__btn {
+    background-color: var(--logo-color);
+  }
+}
+
+/*end-style:: section fqa*/

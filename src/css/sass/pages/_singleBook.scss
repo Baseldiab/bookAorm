@@ -1,0 +1,40 @@
+.breadcrumb {
+  &-item {
+    color: var(--text-secondary);
+    --bs-breadcrumb-divider-color: var(--text-secondary);
+  }
+}
+.book {
+  color: var(--text-secondary);
+  &__name {
+    font-family: serif;
+    font-size: 3rem;
+  }
+  &__author,
+  &__price {
+    color: $hover-color;
+  }
+  &__description {
+    &-head {
+      font-size: 2.5rem;
+      font-weight: 600;
+      font-family: serif;
+    }
+  }
+}
+.information {
+  &__button {
+    text-transform: capitalize;
+    font-size: 2.2rem;
+    color: var(--text-secondary);
+    @include rwd-df(sm) {
+      font-size: 1.6rem;
+    }
+  }
+  &__button.active {
+    color: $hover-color !important;
+  }
+  &__text {
+    font-size: 1.8rem;
+  }
+}

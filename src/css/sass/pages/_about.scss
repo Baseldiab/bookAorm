@@ -1,0 +1,57 @@
+.about-01,
+.about-text,
+.team__head {
+  font-family: "Dosis", Helvetica, Arial, sans-serif;
+}
+.about__text,
+.team {
+  background: var(--background-gradient);
+}
+.about {
+  &__text {
+    background-color: var(--about-section-bg) !important;
+    color: var(--text-secondary);
+    font-size: 20px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+  }
+  &-01 {
+    color: var(--about-head-num);
+    font-size: 90px;
+    line-height: 90px;
+    font-weight: 700;
+  }
+  &-head01 {
+    color: var(--about-head-text);
+    font-weight: 400 !important;
+    font-family: Dosis;
+    font-size: 34px;
+    line-height: 34px;
+    margin: -40px 0 34px 0;
+  }
+
+  &-image01 {
+    background: url(../../images/about-bg-1.jpg) no-repeat top center / cover;
+    min-height: 500px;
+  }
+  &-image02 {
+    background: url(../../images/about-bg-2.jpg) no-repeat top center / cover;
+    min-height: 500px;
+  }
+}
+.team {
+  &__main-head {
+    font-size: 44px;
+    color: var(--text-secondary);
+  }
+  &__sec-head {
+    font-size: 22px;
+  }
+  &__name {
+    font-size: 2.2rem;
+    color: var(--text-secondary);
+  }
+  &__text {
+    font-size: 2rem;
+  }
+}

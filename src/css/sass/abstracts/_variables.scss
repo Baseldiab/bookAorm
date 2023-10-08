@@ -1,0 +1,111 @@
+/*
+**  Font size variables
+*/
+$default-font-size: 1.6rem;
+
+/*
+**  Line height  variables
+*/
+$default-line-height: 1.5;
+
+/*
+**  Sections PaddingY  variables
+*/
+$section-padding-vertically: 6.4rem;
+
+/*
+**  Line height  variables
+*/
+$default-hover-transition: 0.3s;
+
+/*
+**  Colors  variables
+*/
+
+$color-primary: #f30b0b;
+$color-secondary: #ebe8e8a1;
+$primary: #f89894;
+$hover-color: #db6965;
+$color-grey: #343a40;
+// light mode
+$color-white: #fff;
+$color-black: #000;
+$main-color: #f0d4c6;
+$link-hover: #636363;
+$text-color-secondary: #999999;
+$about-bg-light: rgb(213 213 213 / 0.64);
+$about-head-number: #ffffff1a;
+// dark mode
+$black-mode: #242c34;
+$footer-darkColor: #0003;
+$footer-lightColor: #25272d;
+$borderBottom-color: #eae8e4;
+$card-bg-dark: #f2f2f2bf;
+$img-bg-dark: #ffffff3b;
+// $card-bg-dark: #f2f2f2a3;
+
+:root {
+  --logo-color: #{$color-black};
+  --top-nav-bgColor: #{$main-color};
+  --main-nav-bgColor: #{$color-white};
+  --top-nav-hover-color: #{$link-hover};
+  --topNav-dropdown-bg: #{$color-white};
+  --main-nav-hover-color: #{$hover-color};
+  --bg-color: #{$color-white};
+
+  --about-section-bg: #{$about-bg-light};
+  --about-head-num: #{$color-white};
+  --about-head-text: #{$color-black};
+
+  --cart-wish-bg: #{$primary};
+  --card-bg: #{$color-white};
+  --card-img-container: #{$color-white};
+
+  --text-color: #{$black-mode};
+  --text-secondary-color: #{$color-black};
+  --text-secondary: #{$color-black};
+
+  --border-color: #{$borderBottom-color};
+  --footer-color: #{$footer-lightColor};
+  --text-footer: #{$color-white};
+
+  --card-box-shadow: 0px 0px 16px 1px rgb(22 22 25 / 64%);
+  --background-gradient: linear-gradient(to top, #ffffff, #b0afaf30);
+}
+
+[data-theme="dark"] {
+  --logo-color: #{$color-white};
+  --top-nav-bgColor: #{$black-mode};
+  --main-nav-bgColor: #{$black-mode};
+
+  --top-nav-hover-color: #{$primary};
+  --topNav-dropdown-bg: #{$color-black};
+  --main-nav-hover-color: #{$hover-color};
+  --bg-color: #{$black-mode};
+
+  --about-section-bg: #{$black-mode};
+  --about-head-num: #{$about-head-number};
+  --about-head-text: #{$color-white};
+
+  --card-bg: #{$card-bg-dark};
+  --text-color: #{$color-white};
+  --text-secondary-color: #{$text-color-secondary};
+  --text-secondary: #{$color-secondary};
+  --card-img-container: #{$img-bg-dark};
+  --cart-wish-bg: #{$primary};
+
+  --card-box-shadow: 0 0 16px 1px #ffffff;
+  --background-gradient: linear-gradient(to top, #242c34, #192028);
+
+  --hover-text: #{$color-black};
+  --footer-color: #{$footer-darkColor};
+  --text-footer: #{$color-white};
+}
+
+// $color-secondary: #ffb900;
+// $color-tertiary-light: #2998ff;
+// $color-grey-light: #f7f7f7;
+// $color-grey-light: #eee;
+// $color-grey-dark: #777;
+// $color-grey-dark-2: #999;
+// $color-grey-dark-3: #333;

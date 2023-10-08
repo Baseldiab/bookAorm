@@ -1,0 +1,44 @@
+/*
+**  direction setting variables
+*/
+$start: left;
+$end: right;
+
+$heading-font: Lato, sans-serif;
+$text-font: Inter, sans-serif;
+$primary: #db6965;
+
+/*******************************  import All used scss files   ******************************/
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "./bootstrap/scss/bootstrap.scss";
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/fonts";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/container";
+@import "components/button";
+@import "components/chair-card";
+@import "components/accordion";
+@import "components/table";
+@import "components/pagination";
+@import "components/slider";
+
+@import "layout/header";
+@import "layout/main";
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/home";
+@import "pages/about";
+@import "pages/books";
+@import "pages/cart";
+@import "pages/wish";
+@import "pages/contact";
+@import "pages/singleBook";
+// *****************************

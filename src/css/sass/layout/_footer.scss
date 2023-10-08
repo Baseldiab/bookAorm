@@ -1,0 +1,45 @@
+/*
+**  define styling for element components with specified with classe main footer.
+*/
+#footer-placeholder {
+  background-color: var(--footer-color);
+}
+.footer {
+  color: var(--text-footer);
+  &-text {
+    font-size: 1.6rem;
+    @include rwd-df(xs) {
+      font-size: 1.3rem;
+    }
+  }
+  &__fill {
+    fill: var(--text-footer);
+  }
+  &__fill-A {
+    fill: $primary;
+  }
+  &-about__text,
+  &__contact-item,
+  &__pages-item,
+  &__follow-item {
+    color: $color-secondary;
+    font-family: "Spartan", sans-serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+  .contact-hover:hover,
+  &__pages-item:hover,
+  &__follow-item:hover {
+    color: $primary;
+  }
+  &__header {
+    color: var(--text-footer);
+  }
+  &__top {
+    border-bottom: 1px solid $color-secondary;
+  }
+  .name {
+    color: $primary;
+  }
+}

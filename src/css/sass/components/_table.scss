@@ -1,0 +1,82 @@
+.table-section {
+  width: 95%;
+  margin: 0 auto;
+  .table {
+    --bs-table-bg: var(--main-nav-bgColor) !important;
+    &__deleteIem {
+      color: var(--logo-color) !important;
+    }
+    &__img {
+      max-width: 80px;
+    }
+    @include rwd-df(xs) {
+      margin-top: 15px;
+      thead {
+        display: none;
+      }
+      &__deleteIem {
+        text-align: end !important;
+      }
+    }
+    th,
+    td,
+    td a {
+      vertical-align: middle;
+      color: var(--text-secondary);
+    }
+    .quantity input {
+      width: 60px;
+    }
+  }
+  @include rwd-df(xs) {
+    .product__addToCart {
+      font-size: 12px;
+    }
+    .table__products,
+    .sub-totalPrice__table tr {
+      /* margin-top: 15px; */
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .addToCart-button {
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  .sub-totalPrice {
+    color: var(--text-secondary);
+    &__head {
+      padding: 50px;
+    }
+    &__h2 {
+      position: absolute;
+      top: -23px;
+      z-index: 10;
+      padding: 0 5px;
+      background-color: var(--bg-color);
+    }
+    &__button {
+      font-size: 1.5rem;
+    }
+
+    .modal-title,
+    &__head,
+    &__h2 {
+      font-family: "Dosis", Helvetica, Arial, sans-serif;
+      letter-spacing: 5px;
+      font-size: 2.5rem;
+    }
+    &__price,
+    &__text {
+      font-size: 2rem;
+    }
+  }
+
+  .modal,
+  &-title {
+    letter-spacing: 1px;
+  }
+}

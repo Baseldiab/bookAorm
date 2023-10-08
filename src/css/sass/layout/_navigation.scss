@@ -1,0 +1,190 @@
+/*
+**  define styling for element component with specified with classes navigation
+*/
+
+.top-nav {
+  // min-height: 75px;
+  background-color: var(--top-nav-bgColor);
+  // border-bottom: 1px solid $color-secondary;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item:not(:last-of-type) {
+    margin-right: 18px;
+  }
+  &__left {
+    flex-direction: column;
+    align-items: center;
+    @include rwd-mf(sm) {
+      flex-direction: row;
+    }
+    a {
+      @include rwd-df(sm) {
+        padding: 5px 0;
+      }
+    }
+  }
+  &__link,
+  &__icon,
+  &__theme-text,
+  &__theme-icon {
+    color: var(--text-secondary-color);
+    font-size: 1.5rem;
+    @include rwd-df(xs) {
+      font-size: 1.2rem;
+    }
+  }
+  &__link:hover,
+  &__icon:hover {
+    color: var(--top-nav-hover-color);
+    // border-bottom: 1px solid var(--hover-color);
+    font-weight: 600;
+  }
+
+  /*start-style:: Switch */
+  &__dropdown {
+    background-color: var(--topNav-dropdown-bg);
+  }
+  &__theme {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  &__theme:hover {
+    background-color: transparent !important;
+  }
+
+  /* The theme__switch - the box around the slider */
+  &__theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 24px;
+  }
+
+  /* Hide default HTML checkbox */
+  &__theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--top-nav-bgColor);
+    /* background-color: #ccc; */
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border: 2px solid var(--text-secondary-color);
+  }
+
+  &__slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--text-secondary-color);
+    /* background-color: white; */
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + &__slider {
+    background-color: var(--c-secondary);
+  }
+
+  input:focus + &__slider {
+    box-shadow: 0 0 1px var(--c-secondary);
+  }
+
+  input:checked + &__slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -o-transform: translateX(20px);
+  }
+
+  /* Rounded sliders */
+  &__slider.round {
+    border-radius: 34px;
+  }
+
+  &__slider.round:before {
+    border-radius: 50%;
+  }
+  /*end-style:: Switch */
+}
+// =======================================================
+.main-nav {
+  background: var(--background-gradient);
+  background-color: var(--main-nav-bgColor);
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  left: 0;
+  &__fill {
+    fill: var(--logo-color);
+  }
+  &__fill-A {
+    fill: $primary;
+  }
+  &__search {
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+  &__link {
+    color: var(--text-secondary-color);
+  }
+  &__link:hover,
+  &__active {
+    color: var(--main-nav-hover-color);
+    font-weight: 700;
+    // font-size: 1.3rem;
+  }
+  &__cart {
+    color: var(--top-nav-hover-color);
+    &-span {
+      color: $color-black;
+      transform: translate(-10%, -50%) !important;
+      -webkit-transform: translate(-10%, -50%) !important;
+      -moz-transform: translate(-10%, -50%) !important;
+      -ms-transform: translate(-10%, -50%) !important;
+      -o-transform: translate(-10%, -50%) !important;
+    }
+  }
+  .main-nav__number span {
+    background-color: var(--cart-wish-bg);
+  }
+  &__icon {
+    font-size: 2rem;
+    @include rwd-df(xs) {
+      font-size: 1.5rem;
+    }
+  }
+  &__menu-btn {
+    background-color: $color-white;
+  }
+  &__number {
+    width: fit-content;
+  }
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 7%;
+}

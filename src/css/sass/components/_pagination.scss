@@ -1,0 +1,64 @@
+.pagination {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+
+	@include rwd-df(xs) {
+		gap: 0.8rem;
+	}
+
+	&__arrow {
+		cursor: pointer;
+		@include squareSize(4rem);
+
+		padding: 0.5rem;
+		font-weight: 600;
+		color: $color-primary;
+		border-radius: 50%;
+		border: 2px solid $color-primary;
+		transition: all $default-hover-transition;
+
+		@include rwd-df(xs) {
+			@include squareSize(3rem);
+			padding: 0.3rem;
+		}
+
+		&:hover {
+			color: $color-white;
+			background-color: $color-primary;
+		}
+	}
+
+	&__dots {
+	}
+
+	&__number {
+		&:link,
+		&:visited {
+			@include squareSize(3.5rem);
+			font-size: 2rem;
+			font-weight: 400;
+			color: $color-grey;
+
+			@include rwd-df(xs) {
+				@include squareSize(2.5rem);
+				font-size: 1.6rem;
+			}
+
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all $default-hover-transition;
+		}
+
+		&:hover,
+		&:active,
+		&.active {
+			background-color: $color-primary;
+			color: $color-white;
+		}
+	}
+}

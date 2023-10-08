@@ -1,0 +1,48 @@
+.chair-card {
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: 0 0 5px 3px rgba($color: $color-black, $alpha: 0.1);
+	&__image {
+	}
+
+	&__info {
+		padding: 2.5rem;
+	}
+
+	&__header {
+		font-family: $heading-font;
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 2.4rem;
+	}
+
+	&__features {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			&__icon {
+				stroke: $color-primary;
+				@include squareSize(2.4rem);
+			}
+			&__text {
+				font-size: 1.6rem;
+				font-weight: 500;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 2.4rem;
+		&__price {
+			font-size: 2rem;
+			font-weight: 800;
+		}
+	}
+}

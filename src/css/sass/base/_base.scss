@@ -1,0 +1,143 @@
+//A Modern CSS Reset  =>  https://dev.to/hankchizljaw/a-modern-css-reset-6p3
+
+/*
+**  CSS Initialization Reset
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*
+**  start Remove default margin rules
+*/
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/*
+**  Set root font => to set the default 1rem unit value
+*/
+html {
+  //this defines what 1rem is 10px in xl & xxl media
+  font-size: 62.5%; /* 1rem = 10px -->  10/16 *100% = 62.5% */
+
+  @include rwd-df(lg) {
+    font-size: 56.25%; /*1rem = 9px -->  9/16 *100%  =  56.25%*/
+  }
+
+  @include rwd-df(sm) {
+    font-size: 50%; /* 1rem = 8px -->  8/16 *100%  =  50% */
+  }
+
+  scroll-behavior: smooth; /* Does NOT work on Safari */
+}
+
+/*
+**  Set default inherited properties in body element
+*/
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+
+  scroll-behavior: smooth; /* Does NOT work on Safari */
+  text-rendering: optimizeSpeed;
+
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
+}
+
+/*
+** start  ul, ol elements
+*/
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+**  start Make images easier to work with
+*/
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*
+**  start set Anchor elements that don't have a class get default styles
+*/
+a[class] {
+  text-decoration: none;
+}
+
+/*
+**  start Natural flow and rhythm in articles by default
+*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/*
+  ** start Inherit fonts for inputs and buttons
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  border: none;
+  box-shadow: 0 1px 2px rgba($color-black, 0.1);
+}
+
+input::placeholder {
+}
+
+button {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/*
+**  Set Font weight for  strong element
+*/
+strong {
+  font-weight: 500;
+}
+
+/*
+**  Set Elements Focus Style
+*/
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba($color-primary, 0.5);
+}
+
+/*
+**  Set Text Selection Style
+*/
+::selection {
+  background-color: lighten($color-primary, $amount: 10%);
+  color: $color-white;
+}

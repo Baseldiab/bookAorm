@@ -1,0 +1,21 @@
+{
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir ./dist",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@parcel/transformer-sass": "^2.9.3",
+    "gh-pages": "^6.0.0",
+    "parcel": "^2.9.3"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1"
+  }
+}

@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 1rem 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+//
+.main-nav__btn {
+  color: var(--top-nav-hover-color);
+}
+//background-color: $color-primary;
+//color: $color-white;
+//transition: all $default-hover-transition;
+//:;
+//   &:hover,
+//   &:active {
+//     background-color: lighten($color: $color-primary, $amount: 5%);
+//   }
+.btn--big {
+  font-size: 1.8rem;
+  padding: 1.3rem 2.5rem;
+}
+.btn:focus,
+button:focus {
+  box-shadow: none;
+}

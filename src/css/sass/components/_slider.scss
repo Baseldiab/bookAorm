@@ -1,0 +1,114 @@
+// .slider {
+//   width: 80%;
+//   margin: 0 auto;
+//   position: relative;
+//   // background-color: $color-primary;
+//   border-radius: 1rem;
+//   padding: 3.5rem;
+//   box-shadow: 0 0 3px 2px rgb($color-black, 0.3);
+//   @include rwd-df(md) {
+//     width: 60%;
+//     padding: 2.5rem;
+//   }
+
+//   @include rwd-df(sm) {
+//     width: 80%;
+//   }
+
+//   @include rwd-df(xs) {
+//     width: 100%;
+//   }
+
+//   &__slide {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+
+//     @include rwd-df(md) {
+//       flex-direction: column;
+//       gap: 2.5rem;
+//     }
+
+//     &__image {
+//       width: 30%;
+
+//       margin: 0 5.5rem 0 4rem;
+//       border-radius: 1rem;
+//       transform: scale(1.4);
+//       box-shadow: 0 12px 24px rgb($color-black, 0.25);
+
+//       @include rwd-df(md) {
+//         width: 100%;
+//         transform: scale(1);
+//         margin: 0 4rem;
+//       }
+//     }
+
+//     &__info {
+//       color: lighten($color: $color-primary, $amount: 60%);
+//       &__job-description {
+//         font-size: 2rem;
+//         font-weight: 500;
+//         line-height: 1.5;
+//         margin-bottom: 3.2rem;
+//         @include rwd-df(md) {
+//           margin-bottom: 2rem;
+//         }
+//       }
+//       &__employee-name {
+//         font-size: 1.6rem;
+//         margin-bottom: 0.4rem;
+//       }
+//       &__job-title {
+//         font-size: 1.4rem;
+//       }
+//     }
+//   }
+//   &__btn {
+//     position: absolute;
+//     cursor: pointer;
+//     top: 50%;
+//     @include squareSize(4rem);
+//     padding: 0.5rem;
+//     border-radius: 50%;
+//     background-color: $color-white;
+//     color: $color-primary;
+//     // box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+
+//     &:hover {
+//       box-shadow: 0 12px 24px rgb(0 0 0 / 20%);
+//     }
+
+//     &--prev {
+//       #{$start}: 0;
+//       transform: translate(-50%, -50%);
+//     }
+//     &--next {
+//       #{$end}: 0;
+//       transform: translate(50%, -50%);
+//     }
+//   }
+
+//   &__dots {
+//     display: flex;
+//     gap: 0.8rem;
+//     position: absolute;
+//     top: calc(100% + 2rem);
+//     #{$start}: 50%;
+//     transform: translateX(-50%);
+
+//     &__dot {
+//       display: block;
+//       @include squareSize(1.2rem);
+//       border-radius: 50%;
+//       border: 2px solid $color-primary;
+//       transition: $default-hover-transition;
+
+//       &:hover,
+//       &.active {
+//         cursor: pointer;
+//         background-color: $color-primary;
+//       }
+//     }
+//   }
+// }

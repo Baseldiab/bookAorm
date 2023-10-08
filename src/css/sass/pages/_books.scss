@@ -1,0 +1,65 @@
+.search {
+  &__form {
+    position: relative;
+    width: 60%;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+    @include rwd-df(md) {
+      width: 80%;
+    }
+    input {
+      font-size: 2rem;
+      background-color: transparent;
+      color: var(--text-secondary) !important;
+      &::placeholder {
+        color: var(--text-secondary) !important;
+      }
+      &:focus {
+        background-color: transparent !important;
+      }
+      @include rwd-df(sm) {
+        font-size: 1.2rem;
+      }
+    }
+    i {
+      // position: absolute;
+      // right: 0;
+      color: var(--text-secondary);
+      border: none;
+      cursor: pointer;
+      font-size: 2rem;
+      @include rwd-df(sm) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__check-box {
+    width: 60%;
+    color: var(--text-secondary);
+
+    @include rwd-df(md) {
+      width: 80%;
+    }
+  }
+  &__input-container:hover .search__delInput {
+    display: inline;
+  }
+  &__delInput {
+    display: none;
+  }
+}
+
+.books {
+  &__cards {
+    .card {
+      margin: auto;
+      // border: 1px solid red !important;
+      @include rwd-df(sm) {
+        max-width: 250px;
+      }
+    }
+  }
+}

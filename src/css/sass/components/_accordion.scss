@@ -1,0 +1,52 @@
+.accordion {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	&__item {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		column-gap: 2.4rem;
+		row-gap: 1rem;
+		box-shadow: 0 0 20px rgb($color-black, 0.1);
+		border-top: 0.5rem solid transparent;
+		border-radius: 1rem;
+		padding: 1.6rem;
+
+		&__number {
+			color: darken($color: $color-white, $amount: 25%);
+			font-size: 2rem;
+			font-weight: 500;
+		}
+
+		&__question {
+			font-family: $heading-font;
+			font-size: 2rem;
+			font-weight: 600;
+		}
+
+		&__icon {
+			stroke: $color-primary;
+			@include squareSize(2.5rem);
+		}
+		&__answer {
+			display: none;
+			grid-area: 2 / 2 / 3 / 3;
+			font-style: italic;
+			color: darken($color: $color-white, $amount: 50%);
+		}
+
+		&.open {
+			border-top-color: $color-primary;
+		}
+
+		&.open &__number,
+		&.open &__question {
+			color: $color-primary;
+		}
+
+		&.open &__answer {
+			display: block;
+		}
+	}
+}

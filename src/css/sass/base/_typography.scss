@@ -1,0 +1,269 @@
+/*
+**  define the style for the body in the page
+*/
+body {
+  font-family: $text-font;
+  font-size: $default-font-size;
+  font-weight: normal;
+  line-height: $default-line-height;
+  color: $color-grey;
+  border-radius: 1rem;
+}
+
+/*
+**  define the style for the primary heading in the page  =>heading-primary
+*/
+.heading-primary {
+  font-family: $heading-font;
+  width: fit-content;
+  margin: 0 auto 6.4rem;
+  font-size: 4.4rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-shadow: 0 5px 5px rgba($color-black, 0.2);
+  text-align: center;
+
+  @include rwd-df(sm) {
+    font-size: 3rem;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    #{$start}: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 0.3rem;
+    border-radius: 2px;
+    background-color: $color-primary;
+  }
+}
+
+/*
+**  define the style for the secondary heading in the page  =>heading-secondary
+*/
+.heading-secondary {
+  font-family: $heading-font;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+/*
+**  define the style for the tertiary heading in the page  =>heading-tertiary
+*/
+.heading-tertiary {
+}
+
+// /*
+// **  define the style for the paragraph  in the page
+// */
+.paragraph {
+  font-size: 2rem;
+  line-height: 1.7;
+
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+/*
+**  define the style for the sections  in the page
+*/
+header {
+  .page-header {
+    color: var(--text-secondary);
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-family: Dosis, Helvetica, Arial, sans-serif;
+    font-size: 2.5rem;
+  }
+}
+.sec {
+  padding: $section-padding-vertically 0;
+
+  @include rwd-df(md) {
+    padding: 4.8rem 0;
+  }
+}
+.top-nav__link:focus,
+.main-nav__link:focus,
+.main-nav__logo:focus,
+.top-nav__icon:focus,
+a:focus {
+  box-shadow: none;
+}
+.scroll-top {
+  position: relative;
+  cursor: pointer;
+  background-color: $hover-color;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  i {
+    @include absCenter;
+    font-size: 25px;
+  }
+}
+/*START-STYLE:: SECTION BOOKS CARDS*/
+.main-head {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--text-secondary);
+}
+.secondary-head {
+  font-size: 2rem !important;
+  font-weight: 500;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  // min-height: 70px;
+  @include rwd-df(sm) {
+    // min-height: 50px;
+  }
+}
+.card-author {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.card-price {
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: IBM Plex Sans, sans-serif;
+}
+.section {
+  background: var(--background-gradient);
+  .container {
+    position: relative;
+  }
+  &__cards {
+    padding: 20px 0;
+    overflow-x: auto;
+    background-repeat: no-repeat;
+    background-position: left center, right center, left center, right center;
+    background-size: 10px 100%, 10px 100%, 10px 100%, 10px 100%;
+
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+    -webkit-overflow-scrolling: touch;
+    & .col {
+      padding: 0 8px;
+    }
+    /* 
+    Progressive enhancement of scrollbar on webkit
+    Use media queries to only use on mobile */
+    &::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Opera */
+    }
+
+    &::-webkit-scrollbar {
+      height: 6px;
+      background-color: white;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #999;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+  }
+}
+
+.card {
+  background-color: var(--card-bg);
+  &:hover {
+    box-shadow: var(--card-box-shadow);
+    z-index: 10;
+  }
+  .img-container {
+    display: flex;
+    align-items: center;
+    -webkit-filter: brightness(0.88);
+    width: 100%;
+    height: 230px;
+    background-color: var(--card-img-container);
+
+    img {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+}
+// .col:not(:last-of-type) .card {
+//   // margin-right: 10px;
+// }
+.scroller-x {
+  z-index: 80;
+  cursor: pointer;
+  background-color: $hover-color;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  i {
+    @include absCenter;
+  }
+}
+.scroll-right {
+  @include rightCenter;
+  right: -25px !important;
+  @include rwd-df(sm) {
+    right: 4px !important;
+  }
+}
+.scroll-left {
+  @include leftCenter;
+  left: -25px !important;
+
+  @include rwd-df(sm) {
+    left: 4px !important;
+  }
+}
+
+.bestsellers,
+.related__cards {
+  .card {
+    margin: auto;
+    width: 180px !important;
+    @include rwd-mf(sm) {
+      width: 230px !important;
+    }
+    @include rwd-mf(lg) {
+      width: 270px !important;
+    }
+  }
+}
+/*END-STYLE:: SECTION BOOKS CARDS*/
+
+/*END-STYLE:: SECTION BOOKS CARDS*/

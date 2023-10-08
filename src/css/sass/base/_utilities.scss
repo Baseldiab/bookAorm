@@ -1,0 +1,85 @@
+/*
+**  define utility classes to make clearfix for specified floated elements
+*/
+.u-clearfix::after {
+	content: '';
+	display: block;
+	clear: both !important ;
+}
+
+/*
+  **  define utility classes to hidden specified elements
+  */
+.u-hidden {
+	display: none !important;
+}
+
+/*
+**  define utility classes to fixed position specified elements
+*/
+.u-sticky {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	z-index: 9999 !important;
+}
+
+/*
+**  define utility class for center inline & inline-block specified elements
+*/
+.u-center-text {
+	text-align: center !important ;
+}
+
+/*
+**  define utility class for center block element specified elements
+*/
+.u-absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*
+  **  define utility class for add overlayer specified elements
+  */
+.u-overlayer::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color-black, 0.7);
+	z-index: 2;
+}
+
+/*start define background colors */
+.bg--primary {
+	background-color: $color-primary !important;
+}
+
+.bg--white {
+	background-color: $color-white !important;
+}
+
+.bg--black {
+	background-color: $color-black !important;
+}
+/*end*/
+
+/*start define text colors */
+.c--primary {
+	color: $color-primary;
+}
+
+.c--white {
+	color: $color-white;
+}
+.c--black {
+	color: $color-black;
+}
+/*end*/
