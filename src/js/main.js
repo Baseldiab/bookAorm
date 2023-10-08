@@ -553,6 +553,7 @@ function createCards() {
 let allData = specificData(0, 40);
 // console.log(allData);
 let totalPrice = 0;
+let price = 0;
 if ($("#cart")) {
   allData.then((data) => {
     const items = readFromStorage("cart");
@@ -654,7 +655,7 @@ allData.then((data) => {
   }
   // console.log(wishArray);
   let bookWishArray = [...new Set(wishArray)];
-  // console.log(bookWishArray);
+  console.log(bookWishArray);
   $(bookWishArray).each((i, book) => {
     if (book.saleInfo.saleability == "NOT_FOR_SALE") {
       price = "Not Available";

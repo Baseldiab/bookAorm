@@ -593,8 +593,8 @@ function promiseToCard(promiseData, sectionHtml) {
     promiseData.then((data)=>{
         let itemsData = data.items;
         if (sectionHtml) itemsData.forEach((item)=>{
-            let price1 = `EGP${item.saleInfo.listPrice?.amount.toFixed(2)}`;
-            if (item.saleInfo.saleability === "NOT_FOR_SALE") price1 = "NOT AVAILABLE";
+            let price = `EGP${item.saleInfo.listPrice?.amount.toFixed(2)}`;
+            if (item.saleInfo.saleability === "NOT_FOR_SALE") price = "NOT AVAILABLE";
             if (item.saleInfo.saleability !== "NOT_FOR_SALE") {
                 let addDataToCards = `<div class="col">
         <div class="card h-100">
@@ -613,7 +613,7 @@ function promiseToCard(promiseData, sectionHtml) {
             " >${item.volumeInfo.title}</a></h5>
             <h6 class="card-author mb-3">${item.volumeInfo?.authors}</h6>
             <p class="card-text card-price">
-              ${price1}
+              ${price}
             </p>
           </div>
           <div class="card-footer">
@@ -986,8 +986,8 @@ function createCards() {
     if (showingData.length == 40) showMoreBtn.classList.add("d-none");
     if (booksCards) showingData.forEach((item)=>{
         // =======================
-        let price1 = `EGP${item.saleInfo.listPrice?.amount.toFixed(2)}`;
-        if (item.saleInfo.saleability == "NOT_FOR_SALE") price1 = "Not Available";
+        let price = `EGP${item.saleInfo.listPrice?.amount.toFixed(2)}`;
+        if (item.saleInfo.saleability == "NOT_FOR_SALE") price = "Not Available";
         // =======================
         let addDataCards = `<div class="col">
       <div class="card h-100">
@@ -1006,7 +1006,7 @@ function createCards() {
           " >${item.volumeInfo.title}</a></h5>
           <h6 class="card-author mb-3">${item.volumeInfo?.authors}</h6>
           <p class="card-text card-price">
-            ${price1}
+            ${price}
           </p>
         </div>
         <div class="card-footer bg-transparent border-0 card__buttons d-flex flex-column ">
@@ -1033,6 +1033,7 @@ function createCards() {
 let allData = specificData(0, 40);
 // console.log(allData);
 let totalPrice = 0;
+let price = 0;
 if ($("#cart")) allData.then((data)=>{
     const items = readFromStorage("cart");
     // console.log(items[0].id);
@@ -1045,18 +1046,18 @@ if ($("#cart")) allData.then((data)=>{
     // console.log(cartArray);
     }
     $(cartArray).each((i, book)=>{
-        let price1;
+        let price;
         let dataPrice;
         let totPrice;
         let pound;
         if (book.saleInfo.saleability == "NOT_FOR_SALE") {
             pound = "";
-            price1 = "Not Available";
+            price = "Not Available";
             totPrice = 0;
             dataPrice = 0;
         } else {
             pound = "EGP";
-            price1 = `EGP${book.saleInfo.listPrice?.amount.toFixed(2)}`;
+            price = `EGP${book.saleInfo.listPrice?.amount.toFixed(2)}`;
             totPrice = `${(book.saleInfo.listPrice?.amount * book.count).toFixed(2)}`;
             dataPrice = `${book.saleInfo.listPrice?.amount.toFixed(0)}`;
         }
@@ -1084,7 +1085,7 @@ if ($("#cart")) allData.then((data)=>{
             class="text-decoration-none "
             >${book.volumeInfo?.authors}</a>
         </td>
-        <td class="product-price" colspan="1"><span class="cart__singlePrice">${price1}</span>
+        <td class="product-price" colspan="1"><span class="cart__singlePrice">${price}</span>
           
         </td>
         <td class="quantity">
@@ -1118,7 +1119,7 @@ allData.then((data)=>{
     let bookWishArray = [
         ...new Set(wishArray)
     ];
-    // console.log(bookWishArray);
+    console.log(bookWishArray);
     $(bookWishArray).each((i, book)=>{
         if (book.saleInfo.saleability == "NOT_FOR_SALE") price = "Not Available";
         else price = `EGP${book.saleInfo.listPrice?.amount.toFixed(2)}`;
@@ -1169,8 +1170,8 @@ function updatePrice() {
         let coun = $($(this).attr("data-price"));
         let singlePrice = $(this).attr("data-singlePrice");
         let count = Number($(this).val());
-        let price1 = singlePrice * count;
-        $(coun).html(price1.toFixed(2));
+        let price = singlePrice * count;
+        $(coun).html(price.toFixed(2));
         // ===========
         totalCartPrice();
     });
@@ -1220,8 +1221,8 @@ const bookButtons = document.querySelector(".book__buttons");
 function getSingleBook(bookID) {
     getPromiseData(`https://www.googleapis.com/books/v1/volumes/${bookID}`).then((data)=>{
         let item = data;
-        let price1 = `EGP${item?.saleInfo?.listPrice?.amount.toFixed(2)}`;
-        if (item.saleInfo?.saleability == "NOT_FOR_SALE") price1 = "NOT AVAILABLE";
+        let price = `EGP${item?.saleInfo?.listPrice?.amount.toFixed(2)}`;
+        if (item.saleInfo?.saleability == "NOT_FOR_SALE") price = "NOT AVAILABLE";
         if (bookNameBreadcrumb || bookImg || bookIsbn || bookNameHeader || bookIsbn13 || bookAuthorHeader || bookPrice || bookAvailability) {
             bookNameBreadcrumb.innerText = item.volumeInfo.title;
             // ===================
@@ -1233,7 +1234,7 @@ function getSingleBook(bookID) {
                 bookIsbn.innerHTML += `<p>${ele.type.toUpperCase()}:<span class="book__isbn ms-2 fw-bold">${ele.identifier}</span></p>`;
             });
             // ===================
-            bookPrice.innerText = `${price1}`;
+            bookPrice.innerText = `${price}`;
             // ===================
             bookNameHeader.innerText = item.volumeInfo.title;
             // ===================
@@ -1266,7 +1267,7 @@ function getSingleBook(bookID) {
         // ===================
         bookDetails.innerHTML = `
        <p class="text-capitalize information__text text-secondary">
-        price: <span class="information__price fw-bold">${price1}</span>
+        price: <span class="information__price fw-bold">${price}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
         publisher:
