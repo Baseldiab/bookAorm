@@ -652,8 +652,9 @@ allData.then((data) => {
     const item = data.items.filter((book, index) => book.id == itemsWish[i].id);
     wishArray.push(item[0]);
   }
-  console.log(wishArray);
+  // console.log(wishArray);
   let bookWishArray = [...new Set(wishArray)];
+  // console.log(bookWishArray);
   $(bookWishArray).each((i, book) => {
     if (book.saleInfo.saleability == "NOT_FOR_SALE") {
       price = "Not Available";
@@ -771,7 +772,7 @@ function getSingleBook(bookID) {
     (data) => {
       let item = data;
       let price = `EGP${item?.saleInfo?.listPrice?.amount.toFixed(2)}`;
-      if (item.saleInfo.saleability == "NOT_FOR_SALE") {
+      if (item.saleInfo?.saleability == "NOT_FOR_SALE") {
         price = "NOT AVAILABLE";
       }
 
@@ -839,17 +840,17 @@ function getSingleBook(bookID) {
         </p>
         <p class="text-capitalize information__text text-secondary">
         publisher:
-        <span class="information__publisher fw-bold">${item.volumeInfo.publisher}</span>
+        <span class="information__publisher fw-bold">${item.volumeInfo?.publisher}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
         publisher date:
-        <span class="information__date fw-bold">${item.volumeInfo.publishedDate}</span>
+        <span class="information__date fw-bold">${item.volumeInfo?.publishedDate}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
-        pages: <span class="information__pages fw-bold">${item.volumeInfo.pageCount}</span>
+        pages: <span class="information__pages fw-bold">${item.volumeInfo?.pageCount}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
-        language: <span class="information__language fw-bold">${item.volumeInfo.language}</span>
+        language: <span class="information__language fw-bold">${item.volumeInfo?.language}</span>
         </p>`;
       // }
       // ===================
