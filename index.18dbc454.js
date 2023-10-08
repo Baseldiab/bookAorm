@@ -695,7 +695,7 @@ function addToWishBtn() {
 // ========================
 function clickAddToLocalStorage(button, arrayName, localKeyName) {
     button.addEventListener("click", (e)=>{
-        e.target.classList.add("disabled");
+        // e.target.classList.add("disabled");
         let dataId = e.target.dataset.id;
         let existingIndex = arrayName.findIndex((item)=>item.id === dataId);
         if (existingIndex !== -1) arrayName[existingIndex].count++;
@@ -1114,10 +1114,11 @@ allData.then((data)=>{
         const item = data.items.filter((book, index)=>book.id == itemsWish[i].id);
         wishArray.push(item[0]);
     }
-    console.log(wishArray);
+    // console.log(wishArray);
     let bookWishArray = [
         ...new Set(wishArray)
     ];
+    // console.log(bookWishArray);
     $(bookWishArray).each((i, book)=>{
         if (book.saleInfo.saleability == "NOT_FOR_SALE") price = "Not Available";
         else price = `EGP${book.saleInfo.listPrice?.amount.toFixed(2)}`;
@@ -1220,7 +1221,7 @@ function getSingleBook(bookID) {
     getPromiseData(`https://www.googleapis.com/books/v1/volumes/${bookID}`).then((data)=>{
         let item = data;
         let price1 = `EGP${item?.saleInfo?.listPrice?.amount.toFixed(2)}`;
-        if (item.saleInfo.saleability == "NOT_FOR_SALE") price1 = "NOT AVAILABLE";
+        if (item.saleInfo?.saleability == "NOT_FOR_SALE") price1 = "NOT AVAILABLE";
         if (bookNameBreadcrumb || bookImg || bookIsbn || bookNameHeader || bookIsbn13 || bookAuthorHeader || bookPrice || bookAvailability) {
             bookNameBreadcrumb.innerText = item.volumeInfo.title;
             // ===================
@@ -1269,17 +1270,17 @@ function getSingleBook(bookID) {
         </p>
         <p class="text-capitalize information__text text-secondary">
         publisher:
-        <span class="information__publisher fw-bold">${item.volumeInfo.publisher}</span>
+        <span class="information__publisher fw-bold">${item.volumeInfo?.publisher}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
         publisher date:
-        <span class="information__date fw-bold">${item.volumeInfo.publishedDate}</span>
+        <span class="information__date fw-bold">${item.volumeInfo?.publishedDate}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
-        pages: <span class="information__pages fw-bold">${item.volumeInfo.pageCount}</span>
+        pages: <span class="information__pages fw-bold">${item.volumeInfo?.pageCount}</span>
         </p>
         <p class="text-capitalize information__text text-secondary">
-        language: <span class="information__language fw-bold">${item.volumeInfo.language}</span>
+        language: <span class="information__language fw-bold">${item.volumeInfo?.language}</span>
         </p>`;
         // }
         // ===================
