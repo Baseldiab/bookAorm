@@ -143,7 +143,7 @@ function addToWishBtn() {
 
 function clickAddToLocalStorage(button, arrayName, localKeyName) {
   button.addEventListener("click", (e) => {
-    e.target.classList.add("disabled");
+    // e.target.classList.add("disabled");
     let dataId = e.target.dataset.id;
 
     let existingIndex = arrayName.findIndex((item) => item.id === dataId);
