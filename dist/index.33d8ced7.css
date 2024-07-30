@@ -14294,6 +14294,10 @@ input:checked + .top-nav__slider:before {
   color: #f89894;
 }
 
+.carousel-img {
+  width: 100vw;
+}
+
 @media (width >= 1200px) {
   .carousel-text {
     overflow: hidden;
